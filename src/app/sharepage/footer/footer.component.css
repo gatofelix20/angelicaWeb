@@ -1,0 +1,39 @@
+.footer {
+    background-color: rgb(158, 85, 85);
+    padding: 15px 10px;
+    overflow: hidden;
+    position: sticky;
+    top: 100%;
+}
+
+h1 {
+    color: beige;
+    font-family: var(--fuenteSecundaria);
+    font-size: 27px;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0px 10px;
+    font-size: 17px;
+    font-family: var(--fuentePrincipal
+    );
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+i {
+   padding: 0px 10px; 
+}
+
+p {
+    color: bisque;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: var(--fuentePrincipal
+    );
+}
+

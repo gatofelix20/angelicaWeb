@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+:root {
+    
+    --primary-color: #3fc060;
+    --secondary-color: #162328;
+    --fuentePrincipal: 'Open Sans', sans-serif;
+    --fuenteSecundaria: 'Dancing Script', cursive;
+}
+
+body {
+    height: 100vh;
+}

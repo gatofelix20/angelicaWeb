@@ -1,0 +1,58 @@
+<div class="banner">
+
+    <div class="content">
+        <h1 class="mb-5">“Vestir es una forma, <br>de vida”</h1>
+        <a routerLink="menu">Go Category <i class="bi bi-arrow-right"></i></a>
+    </div>
+   
+</div>
+
+<!--Step-->
+
+<div class="container mt-5 mb-5">
+    <h1 class="text-center ">Consiga su prenda <span class="highlight">que necesita:</span> </h1>
+    <div class="row mt-5">
+        <!--One-->
+        <div class="col-lg-4 mt-2">
+            <div class="stepBox">
+                <h1>1</h1>
+                <p>De Gala</p>
+            </div>
+        </div>
+            <!--Two-->
+        <div class="col-lg-4 mt-2">
+            <div class="stepBox">
+                <h1>2</h1>
+                <p>Casual</p>
+            </div>
+        </div>
+             <!--Three-->
+        <div class="col-lg-4 mt-2">
+            <div class="stepBox">
+                <h1>3</h1>
+                <p>De Festival</p>
+            </div>
+        </div>
+            
+    </div>
+</div>
+
+<!--foodBox-->
+
+<div class="container mt-4 mb-4">
+    <h1 class="text-center">Diseños de Colección</h1>
+    <div class="row">
+        <div class="col-lg-3 mt-3" *ngFor="let fd of foodData; index as i">
+
+            <div class="foodbox text-center"  *ngIf="i<=3">
+               <img src="{{fd.foodImg}}" > 
+               <h1>{{fd.foodName}}</h1>
+               <p>{{fd.foodPrice | currency: 'INR'}}</p>
+            </div>
+
+        </div>
+    </div>
+  <!--Enlace para ver mas-->
+   <a routerLink="menu" class="viewmorebtn">View More <i class="bi bi-arrow-right"></i></a>
+
+</div>
