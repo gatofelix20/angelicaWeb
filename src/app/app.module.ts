@@ -10,6 +10,9 @@ import { MenuComponent } from './pages/menu/menu.component';
 import { ContacComponent } from './pages/contac/contac.component';
 import { MenupageComponent } from './pages/menupage/menupage.component';
 
+import { environment } from "../environments/environment";
+import { ListarComponent } from './pages/listar/listar.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +21,8 @@ import { MenupageComponent } from './pages/menupage/menupage.component';
     HomeComponent,
     MenuComponent,
     ContacComponent,
-    MenupageComponent
+    MenupageComponent,
+    ListarComponent
   ],
   imports: [
     BrowserModule,
