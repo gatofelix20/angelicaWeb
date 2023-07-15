@@ -10,3 +10,12 @@ background: linear-gradient(to top, #24FE41, #FDFC47); /* W3C, IE 10+/ Edge, Fir
 border-radius: 15px;
 
 }
+
+.titulo {
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+}
+.cont {
+    margin-right: 150px;
+}
