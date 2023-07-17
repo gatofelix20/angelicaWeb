@@ -2,7 +2,7 @@
 
       <div class="row cont">
          <div class="col-lg-8 offset-lg-2">
-            <div class="card">
+            <div class="card mt-5">
                <div class="card-body">
                   <h1 class="titulo">Contacto <i class="bi bi-person-lines-fill"></i></h1>
                </div>
@@ -10,28 +10,28 @@
          </div>
       </div>
 
-    <form class="col-lg-8 ">
+    <form class="col-lg-8 " [formGroup]="form" (ngSubmit)="contac()">
 
     <div class="row justify-content-center">
 
         <div class="col-lg-6 mt-2 mb-2">
-           <input type="text"  class="form-control" placeholder="Enter First Name">
+           <input type="text" formControlName="nombre"  class="form-control" placeholder="Enter First Name">
         </div>
 
         <div class="col-lg-6 mt-2 mb-2">
-            <input type="text" class="form-control" placeholder="Enter Last Name">
+            <input type="text"  formControlName="apellido" class="form-control" placeholder="Enter Last Name">
          </div>
 
          <div class="col-lg-12 mt-2 mb-2">
-            <input type="text"  class="form-control" placeholder="Enter Email ID">
+            <input type="text"  formControlName="email"  class="form-control" placeholder="Enter Email ID">
          </div>
 
          <div class="col-lg-12 mt-2 mb-2">
-            <input type="text"  class="form-control" placeholder="Enter Mobil">
+            <input type="text"  class="form-control"  formControlName="mobil" placeholder="Enter Mobil">
          </div>
 
-         <div class="col-lg-12 mt-2 mb-2">
-           <button class="btn btn-md btn-dark">Submit</button>
+         <div class="col-lg-12 mt-2 mb-2 text-center">
+           <button class="btn btn-md btn-dark" type="submit">Submit</button>
          </div>
 
      </div>
