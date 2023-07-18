@@ -14,10 +14,9 @@ export class ContacComponent implements OnInit{
 
     this.form = this.fb.group({
 
-     nombre: ['', Validators.required],
-     apellido: ['', Validators.required],
-     email: ['', Validators.required],
-     mobil: ['', Validators.required]
+     usuario: ['', Validators.required],
+     email: ['', [Validators.required, Validators.minLength(12),Validators.maxLength(25)]],
+     mobil: ['', [Validators.required, Validators.minLength(11),Validators.maxLength(14)]]
 
     })
 

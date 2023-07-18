@@ -1,14 +1,12 @@
 export class CosturaAng {
     id?: string;
-    nombre: string;
-    apellido: string;
+    usuario: string;
     email: string;
     mobil: number;
 
-     constructor(nombre: string, apellido: string, email: string, mobil: number) {
+     constructor(usuario: string, email: string, mobil: number) {
 
-        this.nombre = nombre;
-        this.apellido = apellido;
+        this.usuario = usuario;
         this.email = email;
         this.mobil = mobil;
 

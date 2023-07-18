@@ -1,4 +1,4 @@
-<div class="container mt-5 mb-5  ">
+<!--<div class="container mt-5 mb-5  ">
 
       <div class="row cont">
          <div class="col-lg-8 offset-lg-2">
@@ -14,20 +14,20 @@
 
     <div class="row justify-content-center">
 
-        <div class="col-lg-6 mt-2 mb-2">
-           <input type="text" formControlName="nombre"  class="form-control" placeholder="Enter First Name">
+        <div class="col-lg-6 mt-2 mb-2" >
+           <input type="text"  formControlName="nombre"  class="form-control"  maxlength="16" placeholder="Enter First Name">
         </div>
 
         <div class="col-lg-6 mt-2 mb-2">
-            <input type="text"  formControlName="apellido" class="form-control" placeholder="Enter Last Name">
+            <input type="text"  formControlName="apellido" class="form-control" maxlength="16" placeholder="Enter Last Name">
          </div>
 
          <div class="col-lg-12 mt-2 mb-2">
-            <input type="text"  formControlName="email"  class="form-control" placeholder="Enter Email ID">
+            <input type="text"  formControlName="email"  class="form-control" maxlength="16" placeholder="Enter Email ID">
          </div>
 
          <div class="col-lg-12 mt-2 mb-2">
-            <input type="text"  class="form-control"  formControlName="mobil" placeholder="Enter Mobil">
+            <input type="text"  class="form-control" maxlength="14"  formControlName="mobil" placeholder="Enter Mobil">
          </div>
 
          <div class="col-lg-12 mt-2 mb-2 text-center">
@@ -36,4 +36,62 @@
 
      </div>
     </form>
+</div> -->
+
+<div class="container ">
+
+  <div class="row">
+
+   <div class="card mt-5">
+      <div class="card-body">
+         <h1 class="titulo bg-primary">Contacto <i class="bi bi-person-lines-fill"></i></h1>
+   
+         <form class="bg-primary" [formGroup]="form" (ngSubmit)="contac()">
+            <div class="input-group input-group-lg mb-3">
+               <span class="input-group-text">
+                  <i class="fa-solid fa-circle-user"
+                  [class.green-bar]="this.form.get('usuario')?.valid"
+                  [class.red-bar]="this.form.get('usuario')?.invalid && this.form.get('usuario')?.touched"
+                  ></i></span>
+               <input type="text" formControlName="usuario"
+                class="form-control" placeholder="Usuario">
+             </div>
+   
+             <div class="input-group input-group-lg mb-3">
+               <span class="input-group-text">
+                  <i class="fa-solid fa-envelope"
+                  [class.green-bar]="this.form.get('email')?.valid"
+                  [class.red-bar]="this.form.get('email')?.invalid && this.form.get('email')?.touched"
+                  ></i></span>
+               <input type="text" formControlName="email"
+               maxlength="25"  class="form-control" placeholder="Email">
+             </div>
+   
+             <div class="input-group input-group-lg mb-3">
+               <span class="input-group-text">
+                  <i class="fa-solid fa-mobile-retro"
+                  [class.green-bar]="this.form.get('mobil')?.valid"
+                  [class.red-bar]="this.form.get('mobil')?.invalid && this.form.get('mobil')?.touched"
+                  ></i></span>
+               <input type="text" formControlName="mobil"
+               maxlength="14"  class="form-control" placeholder="Mobil">
+             </div>
+             <!--Boton-->
+
+             <div class="d-grid gap-2">
+               <button [disabled]="form.invalid" class="btn btn-success btn-lg" type="submit"><i class="bi bi-send-check"></i>  Enviar</button>
+               
+             </div>
+   
+             
+         </form>
+      </div>
+   </div>
+
+  </div>
+
 </div>
+
+
+
+
