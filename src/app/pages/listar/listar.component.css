@@ -1,12 +1,25 @@
 .fa-solid  {
     cursor: pointer;
-    margin-right: 5px;
+    margin-left: 8px;
+    align-items: center;
+
 }
 
-.table {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    
+.texto {
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    background-color: bisque;
+    border-radius: 7px;
+
+}
+
+th {
+    text-align: center;
+    font-size: 13px;
+}
+
+td {
+    text-align: center;
+    font-size: 12px;
 }
