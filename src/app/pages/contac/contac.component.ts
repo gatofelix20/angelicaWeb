@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CosturaAng } from 'src/app/models/CosturaAng';
 
 @Component({
   selector: 'app-contac',
@@ -25,7 +26,18 @@ export class ContacComponent implements OnInit{
   ngOnInit(): void {}
 
   contac() {
-    console.log(this.form);
+    
+    //Crear Objeto
+
+   const COSTURA : CosturaAng = {
+     
+      usuario: this.form.value.usuario,
+      email: this.form.value.email,
+      mobil: this.form.value.mobil,
+   }
+   console.log(COSTURA);
+   
+
   }
 
 }
