@@ -12,6 +12,7 @@ import { OrderCosturaService } from 'src/app/services/order-costura.service';
 export class ContacComponent implements OnInit{
 
   form: FormGroup;
+  loading = false;
 
   constructor(private fb: FormBuilder, private _costuraService: OrderCosturaService) {
 
@@ -40,12 +41,16 @@ export class ContacComponent implements OnInit{
        mobil: this.form.value.mobil,
       }
       
-
+      this.loading = true;
       this._costuraService.guardarCostura(COSTURA).then(() =>{
+
+        this.loading = false;
+
         console.log('Registro Registrado');
         this.form.reset();
         
       }, error =>{
+        this.loading = false;
         console.log(error);
         
       })

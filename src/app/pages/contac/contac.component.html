@@ -44,7 +44,11 @@
 
    <div class="card mt-5">
       <div class="card-body">
-         <h1 class="titulo bg-primary">Contacto <i class="bi bi-person-lines-fill"></i></h1>
+         <h1 class="titulo bg-primary">Contacto  
+            <div *ngIf="loading" class="spinner-border float-end" role="status">
+               <span class="visually-hidden">Loading...</span>
+             </div>
+            <i class="bi bi-person-lines-fill"></i></h1>
    
          <form class="bg-primary" [formGroup]="form" (ngSubmit)="costuraMar()">
             <div class="input-group input-group-lg mb-3">
