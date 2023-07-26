@@ -1,11 +1,23 @@
 import { Injectable } from '@angular/core';
 
+import { AngularFirestore } from "@angular/fire/compat/firestore";
+import { CosturaAng } from '../models/CosturaAng';
+
 @Injectable({
   providedIn: 'root'
 })
 export class OrderCosturaService {
 
-  constructor() { }
+  constructor( private firebase: AngularFirestore) { }
+
+  //Base de datos Crud
+
+  guardarCostura(costura: CosturaAng): Promise<any> {
+
+   return this.firebase.collection('costuras').add(costura);
+
+
+  }
 
 // fooddetails 
   

@@ -15,6 +15,10 @@ import { MenupageComponent } from './pages/menupage/menupage.component';
 import { environment } from "../environments/environment";
 import { ListarComponent } from './pages/listar/listar.component';
 
+import { AngularFireModule } from "@angular/fire/compat";
+
+import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +33,9 @@ import { ListarComponent } from './pages/listar/listar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

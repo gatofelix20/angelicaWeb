@@ -1,6 +1,8 @@
+import { registerLocaleData } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CosturaAng } from 'src/app/models/CosturaAng';
+import { OrderCosturaService } from 'src/app/services/order-costura.service';
 
 @Component({
   selector: 'app-contac',
@@ -11,7 +13,9 @@ export class ContacComponent implements OnInit{
 
   form: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private _costuraService: OrderCosturaService) {
+
+    //Crear objeto
 
     this.form = this.fb.group({
 
@@ -25,19 +29,27 @@ export class ContacComponent implements OnInit{
 
   ngOnInit(): void {}
 
-  contac() {
-    
-    //Crear Objeto
-
-   const COSTURA : CosturaAng = {
+      //confirmacion de ngSubmit y Objeto
+ 
+    costuraMar() {
      
-      usuario: this.form.value.usuario,
-      email: this.form.value.email,
-      mobil: this.form.value.mobil,
-   }
-   console.log(COSTURA);
-   
+      const COSTURA : CosturaAng = {
 
-  }
+       usuario: this.form.value.usuario,
+       email: this.form.value.email,
+       mobil: this.form.value.mobil,
+      }
+      
+
+      this._costuraService.guardarCostura(COSTURA).then(() =>{
+        console.log('Registro Registrado');
+        this.form.reset();
+        
+      }, error =>{
+        console.log(error);
+        
+      })
+      
+    }
 
 }
