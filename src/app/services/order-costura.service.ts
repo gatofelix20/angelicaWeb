@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { AngularFirestore } from "@angular/fire/compat/firestore";
 import { CosturaAng } from '../models/CosturaAng';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,13 @@ export class OrderCosturaService {
   guardarCostura(costura: CosturaAng): Promise<any> {
 
    return this.firebase.collection('costuras').add(costura);
+  }
 
+  // Listar el Proyecto
+
+  obtenerCosturas(): Observable<any> {
+
+   return this.firebase.collection('costuras').snapshotChanges();
 
   }
 

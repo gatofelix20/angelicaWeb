@@ -17,22 +17,15 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
+                    <tr *ngFor="let costura of listarCostura">
                       
-                      <td>Hector Ramirez</td>
-                      <td>hj@gmail.com</td>
-                      <td>0426789887654</td>
+                      <td>{{costura.usuario}}</td>
+                      <td>{{costura.email}}</td>
+                      <td>{{costura.mobil}}</td>
                       <td><i class="fa-solid fa-user-pen text-info"></i></td>
                       <td><i class="fa-solid fa-trash text-danger"></i></td>
                     </tr>
-                    <tr>
-                      
-                      <td>Alejandro Arenales</td>
-                      <td>afr@gmail.com</td>
-                      <td>04267893425</td>
-                      <td><i class="fa-solid fa-user-pen text-info"></i></td>
-                      <td><i class="fa-solid fa-trash text-danger"></i></td>
-                    </tr>
+                   
                     
                   </tbody>
                 </table>
