@@ -38,10 +38,18 @@ export class ListarComponent implements OnInit{
 
        console.log(this.listarCostura);
        
-       
-        
        })
-       
+  }
+
+  eliminarCostura(id: any) {
+
+    this._costuraservice.eliminarCostura(id).then(() =>{
+
+    },error => {
+      console.log(error);
+      
+    }
+    )
 
   }
 

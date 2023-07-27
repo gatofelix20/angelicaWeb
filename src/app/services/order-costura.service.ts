@@ -9,20 +9,28 @@ import { Observable } from 'rxjs';
 })
 export class OrderCosturaService {
 
-  constructor( private firebase: AngularFirestore) { }
+  constructor( private firestore: AngularFirestore) { }
 
   //Base de datos Crud
 
   guardarCostura(costura: CosturaAng): Promise<any> {
 
-   return this.firebase.collection('costuras').add(costura);
+   return this.firestore.collection('costuras').add(costura);
   }
 
   // Listar el Proyecto
 
   obtenerCosturas(): Observable<any> {
 
-   return this.firebase.collection('costuras').snapshotChanges();
+   return this.firestore.collection('costuras', ref => ref.orderBy('usuario', 'asc')).snapshotChanges();
+
+  }
+
+  //Eliminar costura
+
+  eliminarCostura(id:string): Promise<any> {
+
+   return this.firestore.collection('costuras').doc(id).delete();
 
   }
 
