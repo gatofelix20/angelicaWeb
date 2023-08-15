@@ -9,48 +9,19 @@ import { OrderCosturaService } from 'src/app/services/order-costura.service';
 })
 export class ListarComponent implements OnInit{
 
-  listarCostura: CosturaAng[] = [];
+  
 
   constructor(private _costuraservice: OrderCosturaService ) {}
 
   ngOnInit(): void {
 
-      this.obtenerCostura();
+    
 
   }
 
-  obtenerCostura() {
+ 
 
-     this._costuraservice.obtenerCosturas().subscribe(doc => {
-
-       this.listarCostura = [];
-
-       doc.forEach((element: any )=> {
-        
-        this.listarCostura.push({
-
-         id: element.payload.doc.id,
-         ...element.payload.doc.data()
-
-        });
-        
-       });
-
-       console.log(this.listarCostura);
-       
-       })
-  }
-
-  eliminarCostura(id: any) {
-
-    this._costuraservice.eliminarCostura(id).then(() =>{
-
-    },error => {
-      console.log(error);
-      
-    }
-    )
-
-  }
+ 
+  
 
 }

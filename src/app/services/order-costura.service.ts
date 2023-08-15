@@ -2,37 +2,23 @@ import { Injectable } from '@angular/core';
 
 import { AngularFirestore } from "@angular/fire/compat/firestore";
 import { CosturaAng } from '../models/CosturaAng';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrderCosturaService {
 
-  constructor( private firestore: AngularFirestore) { }
 
-  //Base de datos Crud
+  constructor( ) { }
 
-  guardarCostura(costura: CosturaAng): Promise<any> {
+ 
 
-   return this.firestore.collection('costuras').add(costura);
-  }
+  
 
-  // Listar el Proyecto
-
-  obtenerCosturas(): Observable<any> {
-
-   return this.firestore.collection('costuras', ref => ref.orderBy('usuario', 'asc')).snapshotChanges();
-
-  }
-
-  //Eliminar costura
-
-  eliminarCostura(id:string): Promise<any> {
-
-   return this.firestore.collection('costuras').doc(id).delete();
-
-  }
+  
+    
+ 
 
 // fooddetails 
   

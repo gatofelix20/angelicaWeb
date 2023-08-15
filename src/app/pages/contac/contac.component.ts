@@ -1,6 +1,7 @@
-import { registerLocaleData } from '@angular/common';
+
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { CosturaAng } from 'src/app/models/CosturaAng';
 import { OrderCosturaService } from 'src/app/services/order-costura.service';
 
@@ -13,8 +14,11 @@ export class ContacComponent implements OnInit{
 
   form: FormGroup;
   loading = false;
+  usuario = 'Agregar Costura';
+  id: string | null;
 
-  constructor(private fb: FormBuilder, private _costuraService: OrderCosturaService) {
+  constructor(private fb: FormBuilder, private _costuraService: OrderCosturaService,
+    private aRoute: ActivatedRoute) {
 
     //Crear objeto
 
@@ -26,35 +30,17 @@ export class ContacComponent implements OnInit{
 
     })
 
+    this.id = this.aRoute.snapshot.paramMap.get('id');
+       console.log(this.id);
+       
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+      
+  }
 
       //confirmacion de ngSubmit y Objeto
  
-    costuraMar() {
-     
-      const COSTURA : CosturaAng = {
-
-       usuario: this.form.value.usuario,
-       email: this.form.value.email,
-       mobil: this.form.value.mobil,
-      }
-      
-      this.loading = true;
-      this._costuraService.guardarCostura(COSTURA).then(() =>{
-
-        this.loading = false;
-
-        console.log('Registro Registrado');
-        this.form.reset();
-        
-      }, error =>{
-        this.loading = false;
-        console.log(error);
-        
-      })
-      
-    }
+   
 
 }

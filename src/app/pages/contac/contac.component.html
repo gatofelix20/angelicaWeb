@@ -38,52 +38,44 @@
     </form>
 </div> -->
 
-<div class="container ">
+<div class="container">
 
   <div class="row">
 
    <div class="card mt-5">
       <div class="card-body">
-         <h1 class="titulo bg-primary">Contacto  
-            <div *ngIf="loading" class="spinner-border float-end" role="status">
-               <span class="visually-hidden">Loading...</span>
-             </div>
+         <h1 class="titulo"> Contacto
+           
             <i class="bi bi-person-lines-fill"></i></h1>
    
-         <form class="bg-primary" [formGroup]="form" (ngSubmit)="costuraMar()">
+         <form >
             <div class="input-group input-group-lg mb-3">
                <span class="input-group-text">
                   <i class="fa-solid fa-circle-user"
-                  [class.green-bar]="this.form.get('usuario')?.valid"
-                  [class.red-bar]="this.form.get('usuario')?.invalid && this.form.get('usuario')?.touched"
                   ></i></span>
-               <input type="text" formControlName="usuario"
+               <input type="text" 
                 class="form-control" placeholder="Usuario">
              </div>
    
              <div class="input-group input-group-lg mb-3">
                <span class="input-group-text">
                   <i class="fa-solid fa-envelope"
-                  [class.green-bar]="this.form.get('email')?.valid"
-                  [class.red-bar]="this.form.get('email')?.invalid && this.form.get('email')?.touched"
                   ></i></span>
-               <input type="text" formControlName="email"
+               <input type="text" 
                maxlength="25"  class="form-control" placeholder="Email">
              </div>
    
              <div class="input-group input-group-lg mb-3">
                <span class="input-group-text">
                   <i class="fa-solid fa-mobile-retro"
-                  [class.green-bar]="this.form.get('mobil')?.valid"
-                  [class.red-bar]="this.form.get('mobil')?.invalid && this.form.get('mobil')?.touched"
                   ></i></span>
-               <input type="text" formControlName="mobil"
+               <input type="text" 
                maxlength="14"  class="form-control" placeholder="Mobil">
              </div>
              <!--Boton-->
 
              <div class="d-grid gap-2">
-               <button [disabled]="form.invalid" class="btn btn-success btn-lg" type="submit"><i class="bi bi-send-check"></i>  Enviar</button>
+               <button  class="btn btn-success btn-lg" type="submit"><i class="bi bi-send-check"></i>  Enviar</button>
                
              </div>
    
