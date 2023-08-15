@@ -25,6 +25,8 @@ const routes: Routes = [
 
   },
 
+      //Crud
+
   {
     path: 'contact',
     component: ContacComponent
@@ -33,7 +35,19 @@ const routes: Routes = [
   {
     path: 'listar',
     component: ListarComponent
-  }
+  },
+
+  {
+    path:'',
+    redirectTo: 'listar',
+    pathMatch: 'full'
+  },
+
+  {
+    path:'**',
+    redirectTo: 'listar',
+    pathMatch: 'full'
+  },
 
  
 
