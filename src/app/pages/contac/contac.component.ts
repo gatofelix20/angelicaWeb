@@ -10,37 +10,45 @@ import { OrderCosturaService } from 'src/app/services/order-costura.service';
   templateUrl: './contac.component.html',
   styleUrls: ['./contac.component.css']
 })
+
 export class ContacComponent implements OnInit{
 
-  form: FormGroup;
-  loading = false;
-  usuario = 'Agregar Costura';
-  id: string | null;
+ createTaller: FormGroup;
+ submitted = false;
+  
 
-  constructor(private fb: FormBuilder, private _costuraService: OrderCosturaService,
-    private aRoute: ActivatedRoute) {
+  constructor (private fb: FormBuilder){
 
-    //Crear objeto
-
-    this.form = this.fb.group({
-
-     usuario: ['', Validators.required],
-     email: ['', [Validators.required, Validators.minLength(12),Validators.maxLength(25)]],
-     mobil: ['', [Validators.required, Validators.minLength(11),Validators.maxLength(14)]]
-
-    })
-
-    this.id = this.aRoute.snapshot.paramMap.get('id');
-       console.log(this.id);
-       
-  }
-
-  ngOnInit(): void {
+   this.createTaller = this.fb.group({
       
+     nombre: ['', Validators.required],
+     apellido: ['', Validators.required],
+     mobil: ['', Validators.required]
+
+   })
+
+  } 
+  
+  ngOnInit(): void {}
+
+  agregarUsuario() {
+    this.submitted = true;
+
+    if(this.createTaller.invalid) {
+      return
+    }
+        
+    //objeto enviado a firebase
+     const usuario: any = {
+      nombre: this.createTaller.value.nombre,
+      apellido: this.createTaller.value.apellido,
+      mobil: this.createTaller.value.mobil,
+      fechaCreacion: new Date(),
+      fechaActualizacin: new Date(),
+     }
+
+    console.log(usuario);
+    
   }
-
-      //confirmacion de ngSubmit y Objeto
- 
-   
-
+     
 }

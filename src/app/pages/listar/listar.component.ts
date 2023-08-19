@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
 import { CosturaAng } from 'src/app/models/CosturaAng';
 import { OrderCosturaService } from 'src/app/services/order-costura.service';
 
@@ -11,17 +14,12 @@ export class ListarComponent implements OnInit{
 
   
 
-  constructor(private _costuraservice: OrderCosturaService ) {}
+  constructor( ) {
+   
+  }
 
   ngOnInit(): void {
 
-    
-
   }
-
- 
-
- 
-  
 
 }

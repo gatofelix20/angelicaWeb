@@ -42,44 +42,44 @@
 
   <div class="row">
 
-   <div class="card mt-5">
+   <div class="card mt-5 text-center">
       <div class="card-body">
          <h1 class="titulo"> Contacto
-           
             <i class="bi bi-person-lines-fill"></i></h1>
-   
-         <form >
+           <span *ngIf="submitted && createTaller.invalid" class="alert alert-primary">Todos los campos son requeridos</span>
+         <form [formGroup]="createTaller" (ngSubmit)="agregarUsuario()">
             <div class="input-group input-group-lg mb-3">
                <span class="input-group-text">
                   <i class="fa-solid fa-circle-user"
                   ></i></span>
                <input type="text" 
-                class="form-control" placeholder="Usuario">
+                class="form-control"
+                formControlName="nombre" placeholder="Nombre">
              </div>
    
              <div class="input-group input-group-lg mb-3">
                <span class="input-group-text">
-                  <i class="fa-solid fa-envelope"
+                  <i class="fa-solid fa-user-minus"
                   ></i></span>
                <input type="text" 
-               maxlength="25"  class="form-control" placeholder="Email">
+               maxlength="25"  class="form-control"
+               formControlName="apellido" placeholder="Apellido">
              </div>
    
              <div class="input-group input-group-lg mb-3">
                <span class="input-group-text">
                   <i class="fa-solid fa-mobile-retro"
                   ></i></span>
-               <input type="text" 
-               maxlength="14"  class="form-control" placeholder="Mobil">
+               <input type="number" 
+               maxlength="12"  class="form-control"
+               formControlName="mobil" placeholder="Mobil">
              </div>
              <!--Boton-->
 
              <div class="d-grid gap-2">
-               <button  class="btn btn-success btn-lg" routerLink="/listar" type="submit"><i class="bi bi-send-check"></i>  Enviar</button>
+               <button  class="btn btn-success btn-lg"  type="submit"><i class="bi bi-send-check"></i>  Enviar</button>
                
              </div>
-   
-             
          </form>
       </div>
    </div>

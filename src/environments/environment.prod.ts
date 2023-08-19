@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  firebaseConfig : {
+  firebase : {
     apiKey: "AIzaSyBi3DDfJzM4jz8Tt3l19w9vX1Ocnr0LboQ",
     authDomain: "tallerang-fc201.firebaseapp.com",
     projectId: "tallerang-fc201",
