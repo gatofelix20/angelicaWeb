@@ -1,7 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CosturaAng } from 'src/app/models/CosturaAng';
 import { OrderCosturaService } from 'src/app/services/order-costura.service';
 
@@ -17,7 +17,9 @@ export class ContacComponent implements OnInit{
  submitted = false;
   
 
-  constructor (private fb: FormBuilder){
+  constructor (private fb: FormBuilder,
+               private _usuarioService: OrderCosturaService,
+               private router: Router){
 
    this.createTaller = this.fb.group({
       
@@ -47,7 +49,15 @@ export class ContacComponent implements OnInit{
       fechaActualizacin: new Date(),
      }
 
-    console.log(usuario);
+    this._usuarioService.agregarUsuario(usuario).then(() =>{
+      console.log('Usuario registrado con exito!');
+      this.router.navigate(['/listar'])
+      
+    }).catch(error =>{
+      console.log(error);
+      
+    })
+    
     
   }
      

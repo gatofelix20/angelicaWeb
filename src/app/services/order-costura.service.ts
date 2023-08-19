@@ -10,15 +10,14 @@ import { Observable, Subject } from 'rxjs';
 export class OrderCosturaService {
 
 
-  constructor( ) { }
+  constructor(private firestore: AngularFirestore) { }
 
  
-
+agregarUsuario(usuario: any): Promise<any> {
+    return this.firestore.collection('usuarios').add(usuario);
+}
   
 
-  
-    
- 
 
 // fooddetails 
   
