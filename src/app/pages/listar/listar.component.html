@@ -19,11 +19,11 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr >
+                    <tr *ngFor="let usuario of usuarios">
                       
-                      <td>Hector </td>
-                      <td>Ramirez</td>
-                      <td>04147138366</td>
+                      <td>{{usuario.nombre}}</td>
+                      <td>{{usuario.apellido}}</td>
+                      <td>{{usuario.mobil}}</td>
                       <td><i  class="fa-solid fa-user-pen text-info"></i></td>
                       <td><i  class="fa-solid fa-trash text-danger"></i></td>
 

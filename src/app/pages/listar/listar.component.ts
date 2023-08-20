@@ -12,14 +12,33 @@ import { OrderCosturaService } from 'src/app/services/order-costura.service';
 })
 export class ListarComponent implements OnInit{
 
-  
+  usuarios: any[] = [];
 
-  constructor( ) {
+  constructor(private  _usuarioService: OrderCosturaService) {
    
   }
 
   ngOnInit(): void {
-
+      this.getUsuarios();
   }
+
+ getUsuarios() {
+ this._usuarioService.getUsuarios().subscribe(data => {
+  this.usuarios = [];
+  data.forEach((element: any) => {
+      
+    //Objeto
+
+    this.usuarios.push({
+       id: element.payload.doc.id,
+       ...element.payload.doc.data()
+    })
+    
+  });
+  console.log(this.usuarios);
+  
+ })
+  
+ }
 
 }

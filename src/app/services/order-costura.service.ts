@@ -16,6 +16,12 @@ export class OrderCosturaService {
 agregarUsuario(usuario: any): Promise<any> {
     return this.firestore.collection('usuarios').add(usuario);
 }
+
+//Enviar datos a firebase
+
+getUsuarios(): Observable<any> {
+  return this.firestore.collection('usuarios', ref => ref.orderBy('fechaCreacion', 'asc')).snapshotChanges();
+}
   
 
 
