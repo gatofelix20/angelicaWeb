@@ -15,7 +15,7 @@ import { MenupageComponent } from './pages/menupage/menupage.component';
 import { environment } from "../environments/environment";
 import { ListarComponent } from './pages/listar/listar.component';
 
-
+import { ToastrModule } from 'ngx-toastr';
 import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
 
@@ -35,7 +35,8 @@ import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
     AppRoutingModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule, 
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

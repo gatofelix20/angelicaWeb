@@ -5,6 +5,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CosturaAng } from 'src/app/models/CosturaAng';
 import { OrderCosturaService } from 'src/app/services/order-costura.service';
 
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-contac',
   templateUrl: './contac.component.html',
@@ -15,11 +17,13 @@ export class ContacComponent implements OnInit{
 
  createTaller: FormGroup;
  submitted = false;
+ loading = false;
   
 
   constructor (private fb: FormBuilder,
                private _usuarioService: OrderCosturaService,
-               private router: Router){
+               private router: Router,
+               private toastr: ToastrService){
 
    this.createTaller = this.fb.group({
       
@@ -49,12 +53,19 @@ export class ContacComponent implements OnInit{
       fechaActualizacin: new Date(),
      }
 
+     this.loading = true;
+
     this._usuarioService.agregarUsuario(usuario).then(() =>{
-      console.log('Usuario registrado con exito!');
-      this.router.navigate(['/listar'])
+      this.toastr.success('El usuario fue registrado con exito!', 'Usuario registrado'); 
       
+      this.loading = false;
+
+      this.router.navigate(['/listar'])
+
     }).catch(error =>{
       console.log(error);
+
+     this.loading = false;
       
     })
     
