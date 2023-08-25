@@ -44,13 +44,17 @@ const routes: Routes = [
   },
 
   {
+    path: 'editUsuario/:id',
+    component: ContacComponent
+  },
+
+  {
     path:'**',
     redirectTo: 'listar',
     pathMatch: 'full'
   },
 
  
-
 ];
 
 @NgModule({

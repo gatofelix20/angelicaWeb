@@ -6,8 +6,10 @@
                <h1 class="texto mb-5">Listar</h1>
 
                <button class="btn btn-dark btn-lg float-end mb-5 me-5" routerLink="/contact">Agregar</button>
+             
+               <h5 *ngIf="usuarios.length == 0">No hay datos para mostrar</h5>
 
-               <table class="table table table-bordered border-primary">
+               <table *ngIf = "usuarios.length > 0" class="table table table-bordered border-primary">
                   <thead class="table-warning">
                     <tr>
                       
@@ -24,8 +26,10 @@
                       <td>{{usuario.nombre}}</td>
                       <td>{{usuario.apellido}}</td>
                       <td>{{usuario.mobil}}</td>
-                      <td><i  class="fa-solid fa-user-pen text-info"></i></td>
-                      <td><i  class="fa-solid fa-trash text-danger"></i></td>
+
+                      <td><i  class="fa-solid fa-user-pen text-info" [routerLink]="['/editUsuario/', usuario.id]"></i></td>
+
+                      <td><i (click)="eliminarUsuario(usuario.id)"  class="fa-solid fa-trash text-danger"></i></td>
 
                     </tr>
                    

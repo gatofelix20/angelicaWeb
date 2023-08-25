@@ -44,7 +44,8 @@
 
    <div class="card mt-5 text-center">
       <div class="card-body">
-         <h1 class="titulo"> Contacto
+
+         <h1 class="titulo"> {{titulo}}
 
             <i class="bi bi-person-lines-fill"></i>
 
@@ -54,7 +55,7 @@
 
             </h1>
            <span *ngIf="submitted && createTaller.invalid" class="alert alert-primary">Todos los campos son requeridos</span>
-         <form [formGroup]="createTaller" (ngSubmit)="agregarUsuario()">
+         <form [formGroup]="createTaller" (ngSubmit)="agregarEditarUsuario()">
             <div class="input-group input-group-lg mb-3">
                <span class="input-group-text">
                   <i class="fa-solid fa-circle-user"
