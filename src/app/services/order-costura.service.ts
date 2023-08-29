@@ -51,14 +51,14 @@ foodDetails = [
     foodName:"Vestido de Fiesta",
     foodDetails:"Es un  vestido con escote tipo v confeccionado en tafeta de seda en color champagne y rebordado en chantilly color hueso con pedrería la falda es circular completa en gasa blanca.",
     foodPrice:200,
-    foodImg:"assets/img/cost-1.jpg"
+    foodImg:"assets/img/cost-12.jpg"
   },
   {
     id:2,
     foodName:"Vestido Dharma",
     foodDetails:"El traje está realizado en tela de organza natural, en su parte superior presenta un un escote trapezoidal y en el hombro izquierdo tiene aplicaciones realizadas en pétalos de rosa, va ceñido hasta la cadera desde donde se desprende una falta con caída amplia y cola.",
     foodPrice:369,
-    foodImg:"assets/img/cost-2.jpg"
+    foodImg:"assets/img/cost-13.png"
   },
   {
     id:3,
