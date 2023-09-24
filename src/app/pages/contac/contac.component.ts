@@ -78,7 +78,7 @@ export class ContacComponent implements OnInit{
       
       this.loading = false;
 
-      this.router.navigate(['/listar'])
+      //this.router.navigate(['/listar'])
 
     }).catch(error =>{
       console.log(error);
@@ -103,7 +103,7 @@ export class ContacComponent implements OnInit{
         positionClass: 'toast-bootom-right' 
       })
 
-      this.router.navigate(['/listar']);
+     // this.router.navigate(['/listar']);
 
      });
   }

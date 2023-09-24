@@ -52,7 +52,7 @@ const routes: Routes = [
     path:'**',
     redirectTo: 'listar',
     pathMatch: 'full'
-  },
+  }, 
 
  
 ];
